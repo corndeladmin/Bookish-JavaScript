@@ -25,7 +25,6 @@ npm install
 7. Update the database schema and add an initial user record by running
 ```
 npx sequelize-cli db:migrate
-npx sequelize-cli db:seed:all
 ```
 
 8. Run your code with
@@ -61,20 +60,11 @@ Before you run the app you will need to make sure you've got Postgres installed 
 
 This project uses [Sequelize](https://sequelize.org/) to manage database tables (which correspond to model classes), migrations (which change the database schema) and seeding data (which set initial data), as discussed [here](https://sequelize.org/docs/v6/other-topics/migrations/).
 
-Most tables in the database will have a corresponding model class under `/models` like `user.js`; see [here](https://sequelize.org/docs/v6/core-concepts/model-basics/#extending-model) for documentation on the approach used there.
+Most tables in the database will have a corresponding model class under `/models` like `book.js`; see [here](https://sequelize.org/docs/v6/core-concepts/model-basics/#extending-model) for documentation on the approach used there.
 
 Changes to the database schema (to create tables or make changes) are done using migrations, which should be added in `/migrations`. You should be able to map the migration that is already in the repo to the documentation [here](https://sequelize.org/docs/v6/other-topics/migrations/#migration-skeleton).
 
 You can update the database schema by applying any outstanding migrations by running:
 ```
 npx sequelize-cli db:migrate
-```
-
-## Existing admin user
-
-There is an admin user already set up for you in the database (by the file under `/seeders`):
-
-```
-email: admin@test.com
-password: adminpassword
 ```
