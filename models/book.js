@@ -7,7 +7,8 @@ export const Book = db.define('book', {
     }
 },{
     sequelize: db,
-    modelName: "book"
+    modelName: "book",
+    timestamps: false
 }
 
 )
